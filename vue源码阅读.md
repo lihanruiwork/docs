@@ -1,4 +1,5 @@
 # vue源码阅读
+https://juejin.im/book/5a36661851882538e2259c0f/section/5a3bb17af265da4307037186
 * 依赖收集
     * observe(data)
     New Dep()
