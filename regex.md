@@ -9,6 +9,9 @@
     * multiline 
     * lastIndex  g修饰符时下一次开始搜索的位置
     * source 正则表达式的字符串形式
+    * sticky：粘连 y
+         * g修饰符只要剩余位置中存在匹配就可，而y修饰符确保匹配必须从剩余的第一个位置开始
+    * flags：ig
 * regex.test(str)   //true false
     * 如果带有g,每一次test方法都从上一次结束的位置开始向后匹配
     * 通过lastIndex指定开始搜索的位置，必须有g
@@ -92,8 +95,21 @@
     * “abcabc”.match(/(.)b(.)/); [abc,a,c]
     * /(.)b(.)\1b\2/.test(“abcabc”)  true
     * “hello world”.replace(/(\w+)\s(\w+)/,”$2$1”);
+* 具名组匹配
+    * (?<year>\d{4})
+    * matchRes.groups.year
+    * 解构赋值
+    ```javascript
+    let {groups: {one, two}} = /^(?<one>.*):(?<two>.*)$/u.exec('foo:bar');
+    one //foo
+    two //bar
+    ```
 * 非捕获组：（?:x）不返回该组匹配的内容
     * “abc”.match(/(?:.)b(.)/);  [abc,c]
 * 先行断言：x(?=y) x只有在y前面才匹配，y不记入结果
     * “abc”.match(/b(?=c)/); [b]
 * 先行否定断言：x(?!y) x只有不在y前面才匹配，y不记入结果
+* 后行断言：(?<=y)x  x只有在y后面才匹配，y不计入结果
+* 后行否定断言：(?<!y)x x只有不在y后面才匹配
+*
+
