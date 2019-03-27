@@ -7,7 +7,7 @@
       * 响应式，依赖收集
   * 编译
     * parse
-      * 解析template，形成AST
+      * 正则解析template，形成AST
     * optimize
       * 标记static静态节点
         *更新界面时，diff算法会跳过静态节点
