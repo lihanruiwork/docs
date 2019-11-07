@@ -1,4 +1,5 @@
 # SHELL
+https://juejin.im/post/5c9653c7f265da60f96f8e3e
 * 执行npm run的时候，就会自动新建一个shell
 * 然后在这个shell里执行脚本命令
 * shell编程就跟java编程一样
@@ -14,6 +15,7 @@
 * inquirer 交互
 * ora loading
 * commander 命令行工具
+* 解析器遇到--，停止读取配置参数值
 * npm link主要做了两件事：
   * 为目标npm模块创建软链接，将其链接到全局node模块安装路径lib/node-modules
   * 为目标npm模块的可执行bin文件创建软链接，将其链接到全局node命令安装路径bin
